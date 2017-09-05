@@ -1,0 +1,1 @@
+I began my programming journey this year, when I decided to try and learning a programming language. Well, I was bit by the coding bug and here I am today. My short term goal is to really learn as much as possible about Flask and MySQl, and my long term goal is to become a competent and well rounded developer.
