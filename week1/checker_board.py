@@ -4,6 +4,8 @@ Each star or space represents a square. On a traditional checkerboard you'll see
 The goal is to repeat a process several times. This should make you think of looping.
 Make a function that prints this out the checker board. Use a loop to make this happen.
 '''
+'''
+# You can do this: 
 
 def checkerboard():
     a = " * * * *"
@@ -13,3 +15,12 @@ def checkerboard():
         print a
 
 checkerboard()
+ 
+'''
+# or this: 
+
+a = " * * * *"
+b = "* * * * "
+for i in range(0, 4):
+    print b
+    print a
