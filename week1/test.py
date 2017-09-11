@@ -1,15 +1,13 @@
-'''
-Write a program that prints a 'checkerboard' pattern to the console.
-Each star or space represents a square. On a traditional checkerboard you'll see alternating squares of red or black. In our case we will alternate stars and spaces. 
-The goal is to repeat a process several times. This should make you think of looping.
-Make a function that prints this out the checker board. Use a loop to make this happen.
-'''
+data ={"house":"Haus","cat":"Katze","red":"rot"}
+print data.items()
+#[('house', 'Haus'), ('red', 'rot'), ('cat', 'Katze')]
+print data.keys()
+#['house', 'red', 'cat']
+print data.values()
+#['Haus', 'rot', 'Katze']
 
-def checkerboard():
-    a = " * * * *"
-    b = "* * * * "
-    for i in range (0, 4):
-        print b
-        print a
+dishes = ["pizza", "sauerkraut", "paella", "hamburger"]
+countries = ["Italy", "Germany", "Spain", "USA"]
 
-checkerboard()
+country_dishes = zip(countries, dishes)
+print country_dishes
