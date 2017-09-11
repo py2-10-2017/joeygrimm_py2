@@ -8,6 +8,7 @@ def coin_tosses():
     heads = 1
     tails = 2
     for i in range(0, 5000):
+        print "Attempt ", i, ":",
         x = random.randint(1,2)
         if x is heads:
             heads_count += 1
