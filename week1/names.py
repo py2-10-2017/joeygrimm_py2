@@ -18,10 +18,12 @@ Instructors =  [
      {'first_name' : 'Martin', 'last_name' : 'Puryear'}
   ]
 
-#names(Students)
-#names(Instructors)
+print names(Students)
+
+print names(Instructors)
 
 # This my original code prior to start the users portion
+
 def User_Names(dic):
      for some_key, some_value in dic.iteritems():
         counter = 0
