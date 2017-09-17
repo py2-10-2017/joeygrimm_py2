@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index.html page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dojo.css') }}">
+    <script type="text/javascript" src="{{ url_for('static', filename='js/dojo.js')}}">
+
+    </script>
+</head>
+<body>
+    <h1>Dojo Form</h1>
+    <h4>{{dojo}}</h4>
+    <form class="" action="" method="post">
+      <input type="text" name="" value="First Name">
+      <input type="text" name="" value="Last Name">
+      <input type="text" name="" value="Email Address">
+      <input type="submit" name="" value="Submit">
+    </form>
+</body>
+</html>

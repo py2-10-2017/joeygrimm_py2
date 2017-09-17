@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index.html page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/ninja2.css') }}">
+    <script type="text/javascript" src="{{ url_for('static', filename='js/ninja.js')}}"></script>
+</head>
+<body>
+    <h1>The Ninja</h1>
+    <p>{{ ninja_desc }}</p>
+    <p>{{ ninja_text }}</p>
+</body>
+</html>
