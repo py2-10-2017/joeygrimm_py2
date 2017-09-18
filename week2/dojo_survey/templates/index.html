@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/index4.css') }}">
+    <script src="{{url_for('static', filename='js/index.js') }}"></script>
+    <title>Dojo Survey</title>
+</head>
+<body>
+    <h1>{{dojo}}</h1>
+    <div id="survey">
+         
+        <form action='/results' method='post'>
+            Name: <input type='text' name='name'>
+            Email: <input type='text' name='email'>
+            Dojo Location: <select name='location' id="">
+                    <option value="seattle">Seattle</option> 
+                    <option value="chicago">Chicago</option> 
+                    <option value="la">Los Angeles</option> 
+                    <option value="dallas">Dallas</option> 
+                    <option value="silval">Silicon Valley</option>
+                    <option value="dc">Washington DC</option>
+                    <option value="tulsa">Tulsa</option>
+                </select>
+            Favorite Language: <select name='language' id="">
+                <option value="python">Python</option> 
+                <option value="javascript">JavaScript</option> 
+                <option value="html">HTML</option> 
+                <option value="css">CSS</option> 
+            </select>
+            Comment (Optional): <textarea name='comment' id="" cols="30" rows="10"></textarea>
+            <input type='submit' value='Submit Survey'>
+          
+    </div>
+    
+</body>
+</html>

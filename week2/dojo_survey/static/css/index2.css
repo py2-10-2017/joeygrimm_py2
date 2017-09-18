@@ -6,3 +6,7 @@ body{
 #survey, form {
     display: block;
 }
+
+#survey, input{
+    display: block; 
+}
