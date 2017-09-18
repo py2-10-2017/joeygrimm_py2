@@ -7,6 +7,6 @@ def index():
 
 @app.route('/results', methods=['POST'])
 def create_user():
-   print "Information added"
+   
    return render_template("results.html", user= request.form)
 app.run(debug=True) 

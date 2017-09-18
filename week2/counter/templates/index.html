@@ -1,0 +1,15 @@
+<html>
+    <head>
+       <title>Counter</title>
+    </head>
+    <body>
+      <h1>How many times have you been here</h1>
+      <h3>This is your {{ session['counter'] }} visit to this webpage!</h3>
+      <form action="/addtwo" method="post">
+        <input type="submit" name="addtwo" value=" Add 2 Visits to the Webpage">
+      </form>
+      <form action="/reset" method="post">
+        <input type="submit" name="backtozero" value="Reset Visits to 1">
+      </form>
+    </body>
+</html>
