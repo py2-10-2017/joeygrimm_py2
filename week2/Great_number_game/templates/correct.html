@@ -10,6 +10,7 @@
 <body>
     <h1>Welcome to the Great Number Game!</h1>
     <h2>You got it right!</h2>
+    <h2>The number was: {{ session['number']}}</h2>
     <h2>Would you like to play again????</h2>
     <form action="/" method="get">
         <input type="submit" name= 'return' value = 'Play Again'>
