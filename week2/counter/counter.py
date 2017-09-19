@@ -5,7 +5,7 @@ app.secret_key='thisissecretkey'
 def index():
     if 'counter' not in session:
         session['counter'] = 0
-    session['counter'] += 1
+        session['counter'] += 1
     return render_template("index.html")
 
 @app.route('/addtwo', methods=['POST'])

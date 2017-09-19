@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/ninja_gold.css')}}">
+    <title>Ninja Gold</title>
+  </head>
+  <body>
+    <h1>Ninja Gold</h1>
+    <br>
+    <br>
+    <h3>Gold: {{ session['gold']}}</h3>
+    <div class="block">
+      <h4>Farm</h4>
+      <p>(Earn 10 to 20 gold pieces)</p>
+      <form action="/process_money" method="post">
+        <input type="hidden" name="building" value="farm" />
+        <input type="submit" value="Find Gold!"/>
+      </form>
+    </div>
+    <div class="block">
+      <h4>Cave</h4>
+      <p>(Earn 5 to 10 gold pieces)</p>
+      <form action="/process_money" method="post">
+        <input type="hidden" name="building" value="cave" />
+        <input type="submit" value="Find Gold!"/>
+      </form>
+    </div>
+    <div class="block">
+      <h4>House</h4>
+      <p>(Earn 2 to 5 gold pieces)</p>
+      <form action="/process_money" method="post">
+        <input type="hidden" name="building" value="house" />
+        <input type="submit" value="Find Gold!"/>
+      </form>
+    </div>
+    <div class="block">
+      <h4>Casino</h4>
+      <p>(Earn  or take away 0 to 50 gold pieces)</p>
+      <form action="/process_money" method="post">
+        <input type="hidden" name="building" value="casino" />
+        <input type="submit" value="Find Gold!"/>
+      </form>
+    </div>
+    <h3>Activities</h3>
+    <p>{{session['activities']}}</p>
+  </body>
+</html>
