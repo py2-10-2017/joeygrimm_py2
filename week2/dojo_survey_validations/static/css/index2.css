@@ -1,0 +1,12 @@
+body{
+    background-color: green;
+
+}
+
+#survey, form {
+    display: block;
+}
+
+#survey, input{
+    display: block; 
+}

@@ -1,0 +1,21 @@
+body{
+    background-color: green;
+
+}
+
+#survey, form {
+    display: block;
+}
+
+#survey, input{
+    display: block; 
+}
+
+#survey, select{
+    display: block;
+
+}
+
+#survey, textarea{
+    display: block;
+}
