@@ -3,3 +3,17 @@
   background-color: gray;
   margin-left: 10px;
 }
+
+input[type="button" i], input[type="submit" i], input[type="reset" i], input[type="file" i]::-webkit-file-upload-button, button {
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+input, textarea, select, button {
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+p{
+  color: green;
+}

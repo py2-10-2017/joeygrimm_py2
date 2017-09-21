@@ -42,7 +42,13 @@
         <input type="submit" value="Find Gold!"/>
       </form>
     </div>
+    <form id="reset" action="/reset" method="post">
+      <input type="hidden" name="reset" value="reset"/>
+      <input type="submit" value="Reset"/>
+    </form>
     <h3>Activities</h3>
-    <p>{{session['activities']}}</p>
+    {% for i in session['activity'] %}
+    <p>{{i}}</p>
+    {% endfor %}
   </body>
 </html>
