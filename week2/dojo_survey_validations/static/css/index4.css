@@ -17,7 +17,7 @@ body{
 }
 
 #survey, input{
-    display: block; 
+    display: block;
 }
 
 #survey, select{
@@ -27,4 +27,8 @@ body{
 
 #survey, textarea{
     display: block;
+}
+
+p{
+  color: red;
 }

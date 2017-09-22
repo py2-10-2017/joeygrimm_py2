@@ -11,29 +11,36 @@
 <body>
     <h1>{{dojo}}</h1>
     <div id="survey">
-         
+
         <form action='/results' method='post'>
             Name: <input type='text' name='name'>
+            {% with messages = get_flashed_messages() %}
+              {% if messages %}
+                {% for message in messages %}
+                  <p>{{message}}</p>
+                {% endfor %}
+              {% endif %}
+            {% endwith %}
             Email: <input type='text' name='email'>
             Dojo Location: <select name='location' id="">
-                    <option value="seattle">Seattle</option> 
-                    <option value="chicago">Chicago</option> 
-                    <option value="la">Los Angeles</option> 
-                    <option value="dallas">Dallas</option> 
+                    <option value="seattle">Seattle</option>
+                    <option value="chicago">Chicago</option>
+                    <option value="la">Los Angeles</option>
+                    <option value="dallas">Dallas</option>
                     <option value="silval">Silicon Valley</option>
                     <option value="dc">Washington DC</option>
                     <option value="tulsa">Tulsa</option>
                 </select>
             Favorite Language: <select name='language' id="">
-                <option value="python">Python</option> 
-                <option value="javascript">JavaScript</option> 
-                <option value="html">HTML</option> 
-                <option value="css">CSS</option> 
+                <option value="python">Python</option>
+                <option value="javascript">JavaScript</option>
+                <option value="html">HTML</option>
+                <option value="css">CSS</option>
             </select>
-            Comment (Optional): <textarea name='comment' id="" cols="30" rows="10"></textarea>
+            Comment (Leaving a comment is necessary): <textarea name='comment'></textarea>
             <input type='submit' value='Submit Survey'>
-          
+
     </div>
-    
+
 </body>
 </html>
