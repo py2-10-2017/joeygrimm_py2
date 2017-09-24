@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style_sheet.css')}}">
+    <title>Teenage Mutant Ninja Turtles</title>
+  </head>
+  <body>
+    <h1>{{character}}</h1>
+    <img src="{{ url_for('static', filename='css/ninjas/'+character+'.jpg') }}" alt="{{character}}">
+  </body>
+</html>
