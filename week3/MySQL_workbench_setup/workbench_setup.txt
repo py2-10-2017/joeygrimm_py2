@@ -1,0 +1,19 @@
+use twitter;
+
+select *
+from tweets
+where user_id = 1;
+
+
+select first_name, last_name, tweet
+from users
+join tweets
+on users.id = tweets.user_id;
+
+SELECT first_name, tweet
+FROM users
+LEFT JOIN faves
+ON users.id = faves.user_id
+LEFT JOIN tweets
+ON faves.tweet_id = tweets.id
+WHERE users.id > 1
