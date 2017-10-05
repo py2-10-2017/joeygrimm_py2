@@ -1,0 +1,9 @@
+body, table, th, td{
+    border: 1px solid black;
+}
+
+body, table{
+    width: 80%;
+    display: inline-table;
+    text-align: left;
+}
