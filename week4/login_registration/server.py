@@ -12,8 +12,10 @@ mysql = MySQLConnector(app,'login_registration')
 
 @app.route('/')
 def index():
-
-    return render_template('index.html')
+    get_all_query = "SELECT * FROM users"
+    users = mysql.query_db(get_all_query)
+    print "index method: found", len(users), "users in the db"
+    return render_template('index.html', users=users)
 
 @app.route('/register', methods=['POST'])
 def create():
@@ -36,7 +38,7 @@ def create():
         flash("Your last name contains a number(s) or special characters.")
         errors = True
 
-    if len(request.form['password']) < 8:
+    if len(request.form['password']) < 7:
         flash("Your password is less than eight characters.")
         errors = True
 
@@ -61,32 +63,35 @@ def create():
         insert_query = "INSERT INTO users (first_name, last_name, email, pw_hash, created_at, updated_at) VALUES (:first_name, :last_name, :email, :pw_hash, NOW(), NOW())"
         query_data = {  'first_name': first_name,'last_name': last_name, 'email': email, 'pw_hash': pw_hash }
         mysql.query_db(insert_query, query_data)
-        return render_template('user.html')
+        new_user_id = mysql.query_db(insert_query, query_data)
+        print new_user_id
+        if new_user_id is not 0:
+            session['id'] = new_user_id
+        else:
+            flash('user creation failed')
+        return redirect('/success')
     
-    
-
 @app.route('/login', methods=['POST'])
 def login():
-    print request.form
-    # you can save all your request.form keys to variables to save some typing
+    errors = False
     email = request.form['email']
     password = request.form['password']
 
-    # run validations
-    if not EMAIL_REGEX.match(email):
-        flash('email is not valid')
+    if not EMAIL_REGEX.match(request.form['email']):
+        flash("You entered an invalid email address.")
 
-    if not len(password) > 7:
-        flash("password isn't valid")
-
-    if not '_flashes' in session:
-        # only query the db if we encountered 0 errors
+    if len(request.form['password']) < 7:
+        flash("Your password is less than eight characters.")
+    
+    if errors:
+        return redirect('/')
+    else:
         try:
-            login_query = 'SELECT * FROM users WHERE email = :email'
-            login_data = {'email': email}
-            user = mysql.query_db(login_query, login_data)
+            user_query = "SELECT * FROM users WHERE :email"
+            query_data = {"email":email}
+            users = mysql.query_db(user_query,query_data)
             hashed = user[0]['password']
-            # ^ this breaks if user is empty, which means they've typed a bad email
+             # ^ this breaks if user is empty, which means they've typed a bad email
             print "<<< about to test password vs hash >>>", hashed, password
             it_worked = bcrypt.check_password_hash(hashed, password)
             print "login success:", it_worked
@@ -96,9 +101,18 @@ def login():
 
         if it_worked:
             session['id'] = user[0]['id']
-            return render_template('user.html')
+            return redirect('/success')
+        else:
+            return redirect('/')
+        
 
-    return redirect('/')
-
+@app.route('/success')
+def success():
+    if 'id' not in session:
+        return redirect('/')
+    userdata = {'id': session['id']}
+    users = mysql.query_db('SELECT * FROM users WHERE id = :id', userdata)
+    current_user = users[0]
+    return render_template('success.html', user=current_user)
 
 app.run(debug=True)
