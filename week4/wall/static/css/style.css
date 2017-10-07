@@ -1,4 +1,6 @@
 nav{
+    background-color: #6C2A6A;
+    color: white;
     padding: 0 5% 0 5%;
 }
 hr {
@@ -10,9 +12,10 @@ nav>h1{
 }
 nav>a{
     float:right;
+    color: white;
 }
 .success{
-    color: green;
+    color:green;
     font-weight: bold;
 }
 .message p, .comment p{

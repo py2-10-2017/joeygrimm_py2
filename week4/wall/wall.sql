@@ -55,7 +55,7 @@ CREATE TABLE IF NOT EXISTS `wall`.`comments` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `user_id` INT NOT NULL,
   `message_id` INT NOT NULL,
-  `comment` TEXT NULL,
+  `content` TEXT NULL,
   `created_at` DATETIME NULL,
   `updated_at` DATETIME NULL,
   PRIMARY KEY (`id`),
