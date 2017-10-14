@@ -20,4 +20,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^',include('apps.blogs.urls')),
     url(r'^blogs/',include('apps.blogs.urls')),
+    #url(r'^',include('apps.time_display.urls')),
+    url(r'^time_display/', include('apps.time_display.urls')),
+
 ]
