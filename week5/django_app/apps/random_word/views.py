@@ -10,14 +10,20 @@ from django.utils.crypto import get_random_string
 # Create your views here.
 def index(request):
     try:
-        request.session['tries']
-    except KeyError:
-        request.session['tries'] = 0
+        request.session['attempts'] += 1
+    except:
+        if not 'attempts' in request.session:
+            request.session['attempts'] = 0
+
+    request.session['word'] = get_random_string(14)
 
     return render(request, "random_word/index.html")
 
 def generate(request):
-    request.session['tries'] += 1  
-    request.session['word'] = get_random_string(14)
-    return redirect('/random_word')
+    return redirect("/")
+
+def reset(request):
+    request.session['attempts'] = 0
+    return redirect("/", request.session['attempts'])
+
 
