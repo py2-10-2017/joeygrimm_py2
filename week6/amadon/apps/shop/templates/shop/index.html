@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {%load static%}
+    <link rel="stylesheet" href="{% static 'shop/style.css'%}">
+    <title>Amagon Shop</title>
+</head>
+<body>
+    <div id="wrapper">
+        <h1>Welcome to the Coding Dojo Store</h1>
+        <table>
+            <tr>
+              <th>Item</th>
+              <th>Price</th>
+              <th>Actions</th>
+            </tr>
+            <tr>
+              <td>Dojo T-Shirt</td>
+              <td>19.99</td>
+              <td>
+                <form action="/process" method="post">{% csrf_token %}<label for="quantity">How Many:</label>
+                    <select name="quantity_shirt" id="">
+                        <option value="1">1</option> 
+                        <option value="2">2</option> 
+                        <option value="3">3</option> 
+                        <option value="4">4</option> 
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                    </select>
+                    <input type='submit' value='Buy!'>
+                </form>
+              </td>
+            </tr>
+            <tr>
+              <td>Dojo Sweatshirt</td>
+              <td>29.99</td>
+              <td>
+                <form action="/process" method="post">{% csrf_token %}<label for="quantity">How Many:</label>
+                    <select name="quantity_sweatshirt" id="">
+                        <option value="1">1</option> 
+                        <option value="2">2</option> 
+                        <option value="3">3</option> 
+                        <option value="4">4</option> 
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                    </select>
+                    <input type='submit' value='Buy!'>
+                </form>
+              </td>
+            </tr>
+            <tr>
+              <td>Dojo Cup</td>
+              <td>4.99</td>
+              <td>
+                <form action="/process" method="post">{% csrf_token %}<label for="quantity">How Many:</label>
+                    <select name="quantity_cup" id="">
+                        <option value="1">1</option> 
+                        <option value="2">2</option> 
+                        <option value="3">3</option> 
+                        <option value="4">4</option> 
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                    </select>
+                    <input type='submit' value='Buy!'>
+                </form>
+              </td>
+            </tr>
+            <tr>
+              <td>Algorithm Book</td>
+              <td>49.99</td>
+              <td>
+                <form action="/process" method="post">{% csrf_token %}<label for="quantity">How Many:</label>
+                    <select name="quantity_book" id="">
+                        <option value="1">1</option> 
+                        <option value="2">2</option> 
+                        <option value="3">3</option> 
+                        <option value="4">4</option> 
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                    </select>
+                    <input type='submit' value='Buy!'>
+                </form>
+              </td>
+            </tr>
+            <tr>
+              <td>Dojo MacBook</td>
+              <td>2000</td>
+              <td>
+                <form action="/process" method="post">{% csrf_token %}<label for="quantity">How Many:</label>
+                    <select name="quantity_computer" id="">
+                        <option value="1">1</option> 
+                        <option value="2">2</option> 
+                        <option value="3">3</option> 
+                        <option value="4">4</option> 
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                    </select>
+                    <input type='submit' value='Buy!'>
+                </form>
+              </td>
+            </tr>
+            <tr>
+              <td>Dojo Baseball Hat</td>
+              <td>15.99</td>
+              <td>
+                <form action="/process" method="post">{% csrf_token %}<label for="quantity">How Many:</label>
+                    <select name="quantity_hat" id="">
+                        <option value="1">1</option> 
+                        <option value="2">2</option> 
+                        <option value="3">3</option> 
+                        <option value="4">4</option> 
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                    </select>
+                    <input type='submit' value='Buy!'>
+                </form>
+              </td>
+            </tr>
+          </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {%load static%}
+    <link rel="stylesheet" href="{% static 'shop/style.css'%}">
+    <title>Thank you for Your Purchase</title>
+</head>
+<body>
+    <h1>Thank you for your purchase</h1>
+    <h2> You spent {{total}} dollars and bought {{item}} items.</h2>
+    <button type="submit"><a href="/clear">Return to Home Page</a></button>
+</body>
+</html>
