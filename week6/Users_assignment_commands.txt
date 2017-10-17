@@ -1,0 +1,39 @@
+Django Assignment Users
+
+from apps.user_login.models import *
+User.objects.all()
+User.objects.create(first_name = "Joey", last_name = "Grimm", email_address = "joeygrimm@gmail.com", age = 31)
+User.objects.all()
+User.objects.create(first_name = "Krissy", last_name = "Grimm", email_address = "kvance@gmail.com", age = 32)
+User.objects.last()
+User.objects.last().all
+User.objects.last().first_name
+User.objects.all().name
+User.objects.all().first_name
+User.objects.all().first_name
+User.objects.all()
+User.objects.create(first_name = "Lea", last_name = "Cromwell", email_address = "lcromwell@gmail.com", age = 59)
+User.objects.all()
+User.objects.first().frist_name.last_name.age
+User.objects.first().first_name.last_name.age
+User.objects.first().last_name
+User.objects.order_by("first_name")
+User.objects.order_by("first_name").first_name
+User.objects.order_by("first_name")
+User.objects.get(id=3)
+b = User.object.get(id=3)
+b = User.objects.get(id=3)
+b.last_name = "Collier"
+b.save()
+User.objects.get(id = 3).last_name
+User.objects.create(first_name = "Dave", last_name = "Westfall", email_address = "dwest@yahoo.com", age = 32)
+User.objects.all()
+User.objects.get(id=4)
+User.objects.get(id=4).delete
+User.objects.get(id=4)
+User.objects.get(id=4).last_name
+b = User.objects.get(id=4)
+b.delete()
+User.objects.get(id=4).last_name
+history
+

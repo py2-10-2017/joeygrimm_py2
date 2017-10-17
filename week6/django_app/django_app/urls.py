@@ -26,6 +26,7 @@ urlpatterns = [
     url(r'^reset/', include('apps.random_word.urls')),
     url(r'^surveys/',include('apps.surveys.urls')),
     url(r'^users/',include('apps.users.urls')),
+    url(r'^user_login/',include('apps.user_login.urls')),
 
     
 
