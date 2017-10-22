@@ -1,0 +1,42 @@
+from apps.book_authors.models import *
+cchange=book.objects.get(id=5)
+cchange.name="C#"
+cchange.save()
+book.objects.get(id=5).name
+achange=author.objects.get(id=5)
+achange.name="Ketul"
+achange.save()
+author.objects.get(id=5).name
+achange.first_name="Ketul"
+achange.save()
+author.objects.get(id=5).first_name
+bookone = book.objects.get(id=1)
+bookktwo = book.objects.get(id=2)
+authorone = author.objects.get(id=1)
+authorone.book.add(bookone)
+authorone.book.add(booktwo)
+authorone.book.add(bookktwo)
+bookthree=book.objects.get(id=3)
+bookfour=book.objects.get(id=4)
+bookfive=book.objects.get(id=5)
+authortwo=author.objects.get(id=2)
+authortwo.book.add(bookone,bookktwo,bookthree)
+authorthree=author.objects.get(id=3)
+authorthree.book.add(bookone,bookktwo,bookthree,bookfour)
+authorfour=author.objects.get(id=4)
+authorfour.book.add(bookone,bookktwo,bookthree,bookfour,bookfive)
+bookthree.author.all()
+bookthree.author.delete(id=1)
+bookthree.author.remove(id=1)
+deleteauthor=bookthree.author.get(id=1)
+bookthree.author.objects.first()
+bookthree.author.get()
+bookthree.authors.first()
+bookthree.author.first()
+bookthree.author.first().first_name
+deleteauthor=bookthree.author.first()
+deleteauthor.delete()
+authorfive=author.objects.get(id=5)
+authorfive.book.add(bookktwo)
+authorthree.book.all()
+authortwo.book.all()
