@@ -1,0 +1,53 @@
+Dojo Ninjas Shell History
+
+dojo.objects.create(name="CodingDojo Seattle", city="Seattle", state= "WA")
+from apps.dojo_ninjas.models import *
+dojo.objects.create(name="CodingDojo Seattle", city="Seattle", state= "WA")
+dojo.objects.create(name="CodingDojo New York", city="New York", state= "NY")
+dojo.objects.create(name="CodingDojo Silicon Valley", city="Mountain View", state= "CA")
+dojo.objects.create(name="CodingDojo Kansas City", city="Kansas City", state= "MO")
+
+dojo.objects.create(name="CodingDojo Dallas", city="Dallas", state= "TX")
+
+dojo.objects.create(name="CodingDojo Tulsa", city="Tulsa", state= "OK")
+dojo.objects.all()
+dojo.objects.all().name()
+dojo.objects.all().name
+dojo.objects.all(name)
+dojo.objects.all("name")
+dojo.objects.all(desc)
+dojo.objects.get()
+dojo.objects.all()
+dojo.objects.get(id=6)
+dojo.objects.get(id=6),name
+dojo.objects.get(id=6).name
+thisdojo = dojo.objects.get(id=4)
+ninja.objects.create(first_name="joe", last_name="grimm", dojo="thisdojo")
+ninja.objects.create(first_name="joe", last_name="grimm", dojo=thisdojo)
+ninja.objects.create(first_name="krissy", last_name="grimm", dojo=thisdojo)
+ninja.objects.create(first_name="lea", last_name="cromwell", dojo=thisdojo)
+thatdojo=dojo.objects.get(id=5)
+ninja.objects.create(first_name="daniel", last_name="grimm", dojo=thatdojo)
+ninja.objects.create(first_name="barbara", last_name="collier", dojo=thatdojo)
+ninja.objects.create(first_name="richard", last_name="vance", dojo=thatdojo)
+thirddojo=dojo.objects.get(id=6)
+ninja.objects.create(first_name="tony", last_name="vance", dojo=thirddojo)
+ninja.objects.create(first_name="nicole", last_name="grimm", dojo=thirddojo)
+ninja.objects.create(first_name="coleman", last_name="marshall", dojo=thirddojo)
+ninja.objects.get(last_name="marshall").dojo
+ninja.objects.get(last_name="marshall").dojo.name
+ninja.objects.all().dojo.name("codingdojo Tulsa")
+ninja.objects.filter(dojo=5)
+ninja.objects.filter(dojo=5).last_name
+ninja.objects.filter(dojo=5)
+ninja.objects.filter(dojo=4)
+ninja.objects.filter(dojo=6)
+dojo.objects.delete(id=1)
+dojo.objects.remove(id=1)
+dojo.objects.delete(id=1)
+b=dojo.objects.get(id=1)
+b.delete()
+b=dojo.objects.get(id=2)
+b.delete()
+b=dojo.objects.get(id=3)
+b.delete()
