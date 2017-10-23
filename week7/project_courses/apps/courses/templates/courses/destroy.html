@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {%load staticfiles%}
+    <link rel="stylesheet" href="{% static 'courses/style.css' %}">
+    <title>Delete Course</title>
+</head>
+<body>
+    <div>
+        <h1>Are you sure you want to delete course {{course.id}}?</h1>
+        <p>Course Name: {{course.name}}</p>
+        <p>Course Description: {{course.desc}}</p>
+        <p>Created At: {{course.created_at}}</p>
+        <button><a href="/courses/{{course.id}}/destroy">Delete Course</a></button>
+        <button><a href="/courses">Don't Delete</a></button>
+    </div>
+    
+</body>
+</html>
