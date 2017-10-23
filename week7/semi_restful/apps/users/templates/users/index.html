@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {%load staticfiles%}
+    <link rel="stylesheet" href="{% static 'users/style.css' %}">
+    <title>Users</title>
+</head>
+<body>
+    {%if messages%}
+    <div>
+        <h1>Error</h1>
+        {%for message in messages%}
+        <p><font color="red">{{message}}</font></p
+        {%endfor%}
+    </div>
+    {%endif%}
+    <div>
+        <h1>Users</h1>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Full Name</th>
+                <th>Email</th>
+                <th>Created At</th>
+                <th>Actions</th>
+            </tr>
+            {%for user in users%}
+            <tr>
+                <td>{{user.id}}</td>
+                <td>{{user.first_name}} {{user.last_name}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.created_at}}</td>
+                <td><a href="/users/{{user.id}}">Show</a>&emsp;<a href="/users/{{user.id}}/edit">Edit</a>&emsp;<a href="/users/{{user.id}}/destroy">Delete</a></td>
+            </tr>
+            {%endfor%}
+        </table>
+        <a href="/users/new">Add a User</a>
+    </div>
+</body>
+</html>

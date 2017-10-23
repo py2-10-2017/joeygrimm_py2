@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {%load staticfiles%}
+    <link rel="stylesheet" href="{% static 'users/style.css' %}">
+    <title>Add a User</title>
+</head>
+<body>
+    {%if messages%}
+    <div>
+        <h1>Error</h1>
+        {%for message in messages%}
+        <p><font color="red">{{message}}</font></p
+        {%endfor%}
+    </div>
+    {%endif%}
+    <div>
+        <h1>Add a New User</h1>
+        <form action="/users/create" method="POST">
+            {%csrf_token%}
+            <label for="first_name">First Name:</label>
+            <input type="text" name="first_name">
+            <label for="last_name">Last Name:</label>
+            <input type="text" name="last_name">
+            <label for="email">Email:</label>
+            <input type="text" name="email">
+            <input type="submit" value="Create">
+        </form>
+        <a href="/users">Go Back</a>
+    </div>
+    
+</body>
+</html>

@@ -1,9 +1,59 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
-
-from django.shortcuts import render, redirect, HttpResponse
+from .models import User
+from django.contrib import messages
+from django.shortcuts import render, HttpResponse, redirect
 
 # Create your views here.
 def index(request):
-    return HttpResponse("This is the index")
+    context ={
+        "users":User.objects.all()
+    }
+    return render(request,"users/index.html", context)
 
+def new(request):
+    return render(request, "users/create.html")
+
+def create(request):
+    errors= User.objects.validate(request.POST)
+    if len(errors):
+        for tag,error in errors.iteritems():
+            messages.error(request, error, extra_tags=tag)
+        return redirect("/users/new")
+    User.objects.create(
+        first_name=request.POST['first_name'],
+        last_name=request.POST['last_name'],
+        email=request.POST['email'],
+    )
+    return redirect("/users")
+
+def edit(request, user_id):
+    context ={
+        "user":User.objects.get(id=user_id)
+    }
+    return render(request,"users/update.html", context)
+
+
+def update(request, user_id):
+    errors= User.objects.validate(request.POST)
+    if len(errors):
+        for tag,error in errors.iteritems():
+            messages.error(request, error, extra_tags=tag)
+        return redirect("/users/{}/edit".format(user_id))
+    user_update = User.objects.get(id=user_id)
+    user_update.first_name=request.POST['first_name']
+    user_update.last_name=request.POST['last_name']
+    user_update.email=request.POST['email']
+    user_update.save()
+    return redirect("/users")
+
+def show(request, user_id):
+    context = {
+        "user": User.objects.get(id=user_id)
+    }
+    return render(request, "users/show.html", context)
+
+def destroy(request, user_id):
+    user_destroy=User.objects.get(id=user_id)
+    user_destroy.delete()
+    return redirect("/users")
